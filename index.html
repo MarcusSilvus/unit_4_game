@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="assets/css/reset.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   <link href="https://fonts.googleapis.com/css?family=Acme|Metamorphous" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Acme|Metamorphous|Aclonica|Artifika|Cinzel" rel="stylesheet">
    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -40,24 +40,27 @@
       </div>
    </div>
 
-   
+
    <div class="container">
       <div class="row">
          <!-- Win counter -->
-         <div class="col-md-2 wins">
-
+         <div class="col-md-2 winsDiv">
+            <h3>Wins</h3>
+            <h3><span id="wins"></span></h3>
          </div>
          <div class="col-md-2"></div>
          <!-- Random score container -->
          <div class="col-md-4">
-            <div class="randomScore">
-               <h2>Match me if you dare!</h2>
+            <div class="randomScoreDiv">
+               <h2>Match me!</h2>
+               <h2><span id="randomScore"></span></h2>
             </div>
-            <div class="col-md-2"></div>
-            <!-- Loss counter -->
-            <div class="col-md-2 losses">
-
-            </div>
+         </div>
+         <div class="col-md-2"></div>
+         <!-- Loss counter -->
+         <div class="col-md-2 lossesDiv">
+            <h3>Losses</h3>
+            <h3><span id="losses"></span></h3>
          </div>
       </div>
    </div>
@@ -68,18 +71,29 @@
          <div class="col-md-1"></div>
          <div class="col-md-10">
             <div class="crystals">
-               <img class="img" src="assets/images/crystal_1.jpg" alt="crystal_1">
-               <img class="img" src="assets/images/crystal_2.jpg" alt="crystal_2">
-               <img class="img" src="assets/images/crystal_3.jpg" alt="crystal_3">
-               <img class="img" src="assets/images/crystal_4.png" alt="crystal_4">
+               <img class="img" id="crysrtal1" src="assets/images/crystal_1.jpg" alt="crystal_1">
+               <img class="img" id="crysrtal2" src="assets/images/crystal_2.jpg" alt="crystal_2">
+               <img class="img" id="crysrtal3" src="assets/images/crystal_3.jpg" alt="crystal_3">
+               <img class="img" id="crysrtal4" src="assets/images/crystal_4.png" alt="crystal_4">
             </div>
-            <div class="col-md-1"></div>
          </div>
+         <div class="col-md-1"></div>
       </div>
    </div>
 
-
-
+<!-- Player score container -->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4"></div>
+         <div class="col-md-4">
+            <div class="playerScoreDiv">
+               <h2>Your score</h2>
+               <h2><span id="playerScore"></span></h2>
+            </div>
+         </div>
+         <div class="col-md-4"></div>
+      </div>
+   </div>
 
 
    <footer>
@@ -90,6 +104,8 @@
       </div>
    </footer>
 
+
+   <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
 </html>
