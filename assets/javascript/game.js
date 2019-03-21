@@ -24,34 +24,56 @@ userCount.textContent = userScore;
 
 
 $(document).ready(() => {
-
-    //Give each crystal a random number
-    $('.img').each(function () {
-        //genrate a random number for cyrstals from 1 - 12
-        var crystalNumber = Math.floor(Math.random() * 12) + 1;
-        console.log(crystalNumber);
-        $(this).attr('data-crystalNumber', crystalNumber);
-    });
     
+    //Give each crystal a random number
+       var gemNum = function () {
+           $('.img').each(function () {
+            //genrate a random number for cyrstals from 1 - 12
+            var crystalNumber = Math.floor(Math.random() * 12) + 1;
+            console.log(crystalNumber);
+            $(this).attr('data-crystalNumber', crystalNumber);
+
+        });
+    }
+
+        gemNum();
+
     //When a crystal is clicked, the number is added to playerScore
-    $('.img').on('click', function() {
+    $('.img').on('click', function () {
         // console.log($(this).attr('data-crystalNumber'));
         var num = parseInt($(this).attr('data-crystalNumber'));
         userScore += num;
         console.log(userScore);
         $('#playerScore').text(userScore);
-        
-       //If playerScore matches randomNumber, player is alerted of win and winCount goes up
+
+        //If playerScore matches randomNumber, player is alerted of win and winCount goes up
         if (userScore === randomNumber) {
-            wins ++;
+            wins++;
+            $('#wins').text(wins);
             alert("You Win!"); 
-        //If playerScore exceeds randonNumber, player is alerted of loss and lossCount goes up
+            startGame();       
+            gemNum();
+            
+            //If playerScore exceeds randonNumber, player is alerted of loss and lossCount goes up
         } else if (userScore > randomNumber) {
-            losses ++;
-            alert("You Lose!"); 
+            losses++;
+            $('#losses').text(losses);
+            alert("You Lose!");
+            startGame();
+            gemNum();
+            
         }
 
+        function startGame () {
+            userScore = 0;
+            randomNumber = Math.floor(Math.random() * 102) + 19;
+            console.log(randomNumber);
+            $('#playerScore').text(userScore);
+            $('#randomScore').text(randomNumber);
+        };
+
     });
+
 
     //Game resets
 
